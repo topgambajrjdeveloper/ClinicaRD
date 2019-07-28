@@ -15,7 +15,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return ' hola desde RoleController@index';
+        return view('theme.backoffice.pages.role.index', [
+            'roles' => Role::all(),
+        ]);
     }
 
     /**
@@ -37,7 +39,7 @@ class RoleController extends Controller
     public function store(StoreRequest $request, Role $role)
     {
         $role = $role->store($request);
-        return 'Se ha almacenado el rol';
+        return redirect()->route('backoffice.role.show', $role);
     }
 
     /**
@@ -48,7 +50,9 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+        return view('theme.backoffice.pages.role.show', [
+            'role' => $role,
+        ]);
     }
 
     /**
