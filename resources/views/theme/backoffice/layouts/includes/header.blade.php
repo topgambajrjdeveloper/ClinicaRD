@@ -7,7 +7,7 @@
             <li>
               <h1 class="logo-wrapper">
                 <a href="index.html" class="brand-logo darken-1">
-                  <img src="images/logo/materialize-logo.png" alt="materialize logo">
+                  <img src="/images/logo/logo.png" alt="clinica rodman logo">
                   <span class="logo-text hide-on-med-and-down">Clínica RodMan</span>
                 </a>
               </h1>
@@ -38,7 +38,7 @@
             <li>
               <a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
                 <span class="avatar-status avatar-online">
-                  <img src="images/avatar/avatar-7.png" alt="avatar">
+                  <img src="/images/avatar/avatar-7.png" alt="avatar">
                   <i></i>
                 </span>
               </a>
@@ -106,24 +106,20 @@
           <ul id="profile-dropdown" class="dropdown-content">
             <li>
               <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">face</i> Profile</a>
+                <i class="material-icons">face</i> Perfil</a>
             </li>
             <li>
               <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">settings</i> Settings</a>
+                <i class="material-icons">settings</i> Ajustes</a>
             </li>
             <li>
               <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">live_help</i> Help</a>
+                <i class="material-icons">live_help</i> Ayuda</a>
             </li>
             <li class="divider"></li>
             <li>
               <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">lock_outline</i> Lock</a>
-            </li>
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">keyboard_tab</i> Logout</a>
+                <i class="material-icons">keyboard_tab</i> Salir</a>
             </li>
           </ul>
         </div>
