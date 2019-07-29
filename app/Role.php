@@ -38,6 +38,7 @@ class Role extends Model
         self::updated($request->all() + [
             'slug' => $slug
         ]);
+        alert()->success('Éxito', 'El Rol se ha actualizado')->persistent('Cerrar');
     }
 
 

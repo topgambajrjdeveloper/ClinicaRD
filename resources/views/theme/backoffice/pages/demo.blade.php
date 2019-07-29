@@ -5,6 +5,14 @@
 @section('head')
 @endsection
 
+@section('breadcrumbs')
+{{-- <li> <a href=""></li> --}}
+@endsection
+
+@section('dropdown_settings')
+{{-- <li> <a href=""></li> --}}
+@endsection
+
 @section('content')
 @endsection
 

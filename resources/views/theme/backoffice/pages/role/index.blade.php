@@ -1,8 +1,17 @@
 @extends('theme.backoffice.layouts.admin')
 
-@section('title', 'Clínica RodMan | Indice de todo los roles')
+@section('title', 'Indice de todos los roles')
 
 @section('head')
+@endsection
+
+@section('breadcrumbs')
+{{-- <li> <a href=""></li> --}}
+  <li> <a href="{{ route('backoffice.role.index') }}"> Roles del Sistema</li>
+@endsection
+
+@section('dropdown_settings')
+{{-- <li> <a href=""></li> --}}
 @endsection
 
 @section('content')

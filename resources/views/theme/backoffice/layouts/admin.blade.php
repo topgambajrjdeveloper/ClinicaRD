@@ -10,6 +10,7 @@
   <div id="main">
     <div class="wrapper">
       @include('theme.backoffice.layouts.includes.sidebar-left')
+      @include('theme.backoffice.layouts.includes.breadcrumb')
       <section id="content">
         @yield('content')
       </section>
