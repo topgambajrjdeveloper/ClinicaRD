@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Role;
+use Alert;
 use App\Http\Requests\Role\StoreRequest;
 use App\Http\Requests\Role\UpdateRequest;
 
@@ -91,6 +92,8 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        $role->delete();
+        alert()->success('Éxito', 'El Rol se ha borrado')->persistent('Cerrar');
+        return redirect()->route('backoffice.role.index');
     }
 }

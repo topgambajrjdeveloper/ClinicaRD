@@ -33,7 +33,8 @@
                                         <p><strong>Slug: </strong> {{ $role->slug }}</p>
                                     </div>
                                   <div class="card-action">
-                                    <a href="{{ route('backoffice.role.index') }}">Volver</a>
+                                    <a  href="{{ route('backoffice.role.index') }}"> Volver</a> 
+                                    <a  href="#" onclick="enviar_form()"> Eliminar</a> 
                                   </div>
                                 </div>
                               </div>
@@ -45,10 +46,20 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>          
     </div>
 </div>
+<form method="post" action="{{ route('backoffice.role.destroy', $role) }}" name="delete_form">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+</form>
 @endsection
 
 @section('foot')
+    <script>
+        function enviar_form()
+        {
+            document.delete_form.submit();       
+        }
+    </script>
 @endsection

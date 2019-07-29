@@ -30,7 +30,7 @@
                         <tbody>
                             @foreach ( $roles as $role )
                             <tr>
-                                <td><a href="{{ route('backoffice.role.show', $role) }}">{{ $role->id }}</td>
+                                <td><a href="{{ route('backoffice.role.show', $role) }}">Eliminar</td>
                                 <td>{{ $role->name }}</td>
                                 <td>{{ $role->description }}</td>
                                 <td>{{ $role->slug }}</td>
