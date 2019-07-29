@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Alert;
 
 class Role extends Model
 {
@@ -25,8 +26,17 @@ class Role extends Model
     public function store($request)
     {
         $slug = str_slug($request->name, '-');
+        alert()->success('Éxito', 'El Rol se ha guardado')->persistent('Cerrar');
         return self::create($request-> all() + [
             'slug' => $slug,
+        ]);
+    }
+
+    public function my_update($request)
+    {
+        $slug = str_slug($request->name, '-');
+        self::updated($request->all() + [
+            'slug' => $slug
         ]);
     }
 

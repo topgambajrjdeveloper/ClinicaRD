@@ -18,6 +18,7 @@
                       <h4 class="header"> Listado de Roles del sistema </h4>
                       <table>
                         <thead>
+                            <a class="waves-effect waves-light btn right" href="{{ route('backoffice.role.create') }}">Crear rol</a>
                               <tr>
                                   <th>#</th>
                                   <th>Nombre</th>
@@ -29,11 +30,11 @@
                         <tbody>
                             @foreach ( $roles as $role )
                             <tr>
-                                <td>{{ $role->id }}</td>
+                                <td><a href="{{ route('backoffice.role.show', $role) }}">{{ $role->id }}</td>
                                 <td>{{ $role->name }}</td>
                                 <td>{{ $role->description }}</td>
                                 <td>{{ $role->slug }}</td>
-                                <td><a href="#">Ver</a></td>
+                                <td><a href="{{ route('backoffice.role.edit', $role) }}">Editar</a></td>
                             </tr>
                             @endforeach
                         </tbody>

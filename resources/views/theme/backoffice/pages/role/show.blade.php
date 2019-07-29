@@ -1,6 +1,6 @@
 @extends('theme.backoffice.layouts.admin')
 
-@section('title', 'Clínica RodMan | Ver todos los roles')
+@section('title', 'Clínica RodMan | Ver roles')
 
 @section('head')
 @endsection
@@ -22,14 +22,18 @@
                             <div class="col s12 m6 l6">
                               <div class="card horizontal">
                                 <div class="card-image">
-                                  <img src="/images/gallary/11.png">
+                                  <img src="/images/role/admin.svg">
                                 </div>
                                 <div class="card-stacked">
-                                  <div class="card-content">
-                                    <p>I am a very simple card with link. I am good at containing small bits of information.</p>
-                                  </div>
+                                    <div class="card-content text-center">
+                                        <p><strong>Rol: </strong> {{ $role->name }}</p>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <p> <strong>Descricción: </strong> {{ $role->description }}</p>
+                                        <p><strong>Slug: </strong> {{ $role->slug }}</p>
+                                    </div>
                                   <div class="card-action">
-                                    <a href="#">This is a link</a>
+                                    <a href="{{ route('backoffice.role.index') }}">Volver</a>
                                   </div>
                                 </div>
                               </div>
