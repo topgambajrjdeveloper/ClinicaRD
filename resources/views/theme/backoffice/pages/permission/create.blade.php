@@ -1,14 +1,13 @@
 @extends('theme.backoffice.layouts.admin')
 
-@section('title', 'Crear Rol')
+@section('title', 'Crear permiso')
 
 @section('head')
 @endsection
 
 @section('breadcrumbs')
 {{-- <li> <a href=""></li> --}}
-  <li> <a href="{{ route('backoffice.role.index') }}"> Roles del Sistema</li>
-  <li>Crear rol</li>
+<li>Crear permiso</li>
 @endsection
 
 @section('dropdown_settings')
@@ -21,14 +20,14 @@
     <div class="row">
       <div class="col s12 m8 offset-m2">
         <div class="card-panel">
-          <h4 class="header2">Crear Rol</h4>
+          <h4 class="header2">Crear Permiso</h4>
           <div class="row">
-            <form class="col s12" method="post" action="{{ route('backoffice.role.store') }}">
+            <form class="col s12" method="post" action="{{ route('backoffice.permission.store') }}">
                 {{ csrf_field() }}
               <div class="row">
                 <div class="input-field col s12">
                   <input id="name" type="text" name="name">
-                  <label for="first_name">Nombre</label>
+                  <label for="first_name">Nombre del permiso</label>
                   @if ($errors->has('name'))
                       <span class="invalid-feedback" role="alert">
                            <strong>{{ $errors->first('name') }}</strong>
@@ -39,13 +38,28 @@
               <div class="row">
                 <div class="input-field col s12">
                   <textarea id="description" class="materialize-textarea" name="description"></textarea>
-                  <label for="description">Descripción del Rol</label>
+                  <label for="description">Descripción del permiso</label>
                   @if ($errors->has('description'))
                       <span class="invalid-feedback" role="alert">
                            <strong>{{ $errors->first('description') }}</strong>
                       </span>
                   @endif
                 </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                    <select name="role_id">
+                      <option value="" disabled="" selected="">Selecciona un rol</option>
+                      @foreach ($roles as $role )
+                      <option value="{{ $role->id }}">{{ $role->name }}</option>
+                      @endforeach
+                    </select>
+                    @if ($errors->has('role_id'))
+                      <span class="invalid-feedback" role="alert">
+                           <strong>{{ $errors->first('role_id') }}</strong>
+                      </span>
+                  @endif
+                  </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">

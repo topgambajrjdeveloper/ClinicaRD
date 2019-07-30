@@ -42,8 +42,14 @@
               <a href="{{ route('backoffice.role.index')}}" class="waves-effect waves-cyan">
                   <i class="material-icons">perm_identity</i>
                   <span class="nav-text">Roles del Sistema</span>
-                </a>
-            </li>
+              </a>
+          </li>
+          <li class="bold">
+            <a href="{{ route('backoffice.permission.index')}}" class="waves-effect waves-cyan">
+                <i class="material-icons">vpn_key</i>
+                <span class="nav-text">Permisos del Sistema</span>
+            </a>
+        </li>
         </ul>
       </li>
     </ul>

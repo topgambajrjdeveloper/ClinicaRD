@@ -1,24 +1,24 @@
 @extends('theme.backoffice.layouts.admin')
 
-@section('title', 'Indice de todos los roles')
+@section('title', 'Permisos del sistema')
 
 @section('head')
 @endsection
 
 @section('breadcrumbs')
 {{-- <li> <a href=""></li> --}}
-<li> <a href="{{ route('backoffice.role.index') }}"> Roles del Sistema</li>
+<li> <a href="{{ route('backoffice.permission.index') }}"> Permisos del Sistema</li>
 @endsection
 
 @section('dropdown_settings')
 {{-- <li> <a href=""></li> --}}
-<li><a class="grey-text text-darkeb-2" href="{{ route('backoffice.role.create') }}">Crear rol</a>
+<li><a class="grey-text text-darkeb-2" href="{{ route('backoffice.permission.create') }}">Crear permiso</a>
 </li>
 @endsection
 
 @section('content')
 <div class="section">
-    <p class="caption"> <strong>Rol del sistema</strong> </p>
+    <p class="caption"> <strong>Permisos del sistema</strong> </p>
     <div class="divider"></div>
     <div class="section" id="basic-form">
         <div class="row">
@@ -32,7 +32,7 @@
                                     <table class="responsive-table">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
+                                                <th>Rol</th>
                                                 <th>Nombre</th>
                                                 <th>Descripción</th>
                                                 <th>Slug</th>
@@ -40,16 +40,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ( $roles as $role )
+                                            @foreach ( $permissions as $permission )
                                             <tr>
-                                                <td>{{ $role->id }}</td>
-                                                <td>{{ $role->name }}</td>
-                                                <td>{{ $role->description }}</td>
-                                                <td>{{ $role->slug }}</td>
+                                                <td>{{ $permission->role_id }}</td>
+                                                <td>{{ $permission->name }}</td>
+                                                <td>{{ $permission->description }}</td>
+                                                <td>{{ $permission->slug }}</td>
                                                 <td><a class="waves-effect waves-light btn"
-                                                        href="{{ route('backoffice.role.edit', $role) }}">Editar {{$role->name}}</a> <a
-                                                        class="waves-effect waves-light btn"
-                                                        href="{{ route('backoffice.role.show', $role) }}">Ver {{$role->name}}</td>
+                                                        href="{{ route('backoffice.permission.edit', $permission) }}">Editar </a>
+                                                    <a class="waves-effect waves-light btn"
+                                                        href="{{ route('backoffice.permission.show', $permission->role) }}">Ver
+                                                        {{$permission->role->name}}</td>
                                             </tr>
                                             @endforeach
                                         </tbody>
