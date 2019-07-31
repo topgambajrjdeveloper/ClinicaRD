@@ -16,6 +16,7 @@ Auth::routes(['verify' => true]);
 
 // Gestion de Rutas desde BackOffice
 Route::group(['middleware' => ['auth'], 'as' => 'backoffice.'], function() {
+    Route::resource('user', 'UserController');
     Route::resource('role', 'RoleController');
     Route::resource('permission', 'PermissionController');
 });

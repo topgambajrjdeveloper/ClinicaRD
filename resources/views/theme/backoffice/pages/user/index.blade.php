@@ -1,18 +1,18 @@
 @extends('theme.backoffice.layouts.admin')
 
-@section('title', 'Indice de todos los roles')
+@section('title', 'Usuarios del sistema')
 
 @section('head')
 @endsection
 
 @section('breadcrumbs')
 {{-- <li> <a href=""></li> --}}
-<li> <a href="{{ route('backoffice.role.index') }}"> Roles del Sistema</li>
+<li> <a href=""> Usuarios del sistema</li>
 @endsection
 
 @section('dropdown_settings')
 {{-- <li> <a href=""></li> --}}
-<li><a class="grey-text text-darkeb-2" href="{{ route('backoffice.role.create') }}">Crear rol</a>
+<li><a class="grey-text text-darkeb-2" href="">Crear usuario</a>
 </li>
 @endsection
 
@@ -22,7 +22,7 @@
     <div class="section" id="basic-form">
         <div class="row">
             <div class="col s12">
-                    <p class="caption"> <strong>Rol del sistema</strong> </p>
+                    <p class="caption"> <strong>Usuarios del sistema</strong> </p>
                 <div class="card">
                     <div class="card-content">
                         <div id="responsive-table">
@@ -32,24 +32,20 @@
                                     <table class="responsive-table">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
                                                 <th>Nombre</th>
-                                                <th>Descripción</th>
-                                                <th>Slug</th>
+                                                <th>Correo</th>
+                                                <th>Edad</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ( $roles as $role )
+                                            @foreach ( $users as $user )
                                             <tr>
-                                                <td>{{ $role->id }}</td>
-                                                <td>{{ $role->name }}</td>
-                                                <td>{{ $role->description }}</td>
-                                                <td>{{ $role->slug }}</td>
-                                                <td><a class="waves-effect waves-light btn"
-                                                        href="{{ route('backoffice.role.edit', $role) }}">Editar {{$role->name}}</a> <a
-                                                        class="waves-effect waves-light btn"
-                                                        href="{{ route('backoffice.role.show', $role) }}">Ver {{$role->name}}</td>
+                                                <td><a href="#">{{ $user->name }}</a></td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->dob }}</td>
+                                                <td><a href="#">Editar</a></td>
+
                                             </tr>
                                             @endforeach
                                         </tbody>
