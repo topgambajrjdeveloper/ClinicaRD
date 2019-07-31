@@ -40,7 +40,7 @@
           </li>
           <li class="bold">
             <a href="{{ route('backoffice.user.index')}}" class="waves-effect waves-cyan">
-                <i class="material-icons">person_add</i>
+                <i class="material-icons">people</i>
                 <span class="nav-text">Usuarios del Sistema</span>
             </a>
           </li>

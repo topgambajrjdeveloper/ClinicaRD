@@ -7,12 +7,12 @@
 
 @section('breadcrumbs')
 {{-- <li> <a href=""></li> --}}
-<li> <a href=""> Usuarios del sistema</li>
+<li> <a href="{{ route('backoffice.user.index') }}"> Usuarios del sistema</li>
 @endsection
 
 @section('dropdown_settings')
 {{-- <li> <a href=""></li> --}}
-<li><a class="grey-text text-darkeb-2" href="">Crear usuario</a>
+<li><a class="grey-text text-darkeb-2" href="{{ route('backoffice.user.create') }}">Crear usuario</a>
 </li>
 @endsection
 
@@ -41,10 +41,10 @@
                                         <tbody>
                                             @foreach ( $users as $user )
                                             <tr>
-                                                <td><a href="#">{{ $user->name }}</a></td>
+                                                <td><a href="{{ route('backoffice.user.show', $user) }}">{{ $user->name }}</a></td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->dob }}</td>
-                                                <td><a href="#">Editar</a></td>
+                                                <td><a href="{{ route('backoffice.user.edit', $user) }}">Editar</a></td>
 
                                             </tr>
                                             @endforeach
