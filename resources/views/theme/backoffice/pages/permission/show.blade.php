@@ -27,12 +27,13 @@
                                         <div class="card">
                                             <div class="card-stacked">
                                                 <div class="card-content">
-                                                    <h4> Rol: {{ $permissions->name }}</h4>
-                                                    <p> Descripción: {{ $permissions->description }}</p>
-                                                    <p> Slug: {{ $permissions->slug }}</p>
+                                                    <h4> Rol: {{ $permission->name }}</h4>
+                                                    <p> Descripción: {{ $permission->description }}</p>
+                                                    <p> Slug: {{ $permission->slug }}</p>
                                                 </div>
                                                 <div class="card-content">
-
+                                                    <a href="{{ route('backoffice.permission.edit', $permission)}}">Editar</a>
+                                                    <a href="#" onclick="enviar_form()">Eliminar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -47,7 +48,7 @@
     </div>
 </div>
 
-<form method="post" action="{{ route('backoffice.role.destroy', $role) }}" name="delete_form">
+<form method="post" action="{{ route('backoffice.permission.destroy', $permission) }}" name="delete_form">
     {{ csrf_field() }}
     {{ method_field('DELETE') }}
 </form>

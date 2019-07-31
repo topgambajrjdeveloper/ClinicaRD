@@ -49,8 +49,8 @@
                                                 <td><a class="waves-effect waves-light btn"
                                                         href="{{ route('backoffice.permission.edit', $permission) }}">Editar </a>
                                                     <a class="waves-effect waves-light btn"
-                                                        href="{{ route('backoffice.permission.show', $permission->role) }}">Ver
-                                                        {{$permission->role->name}}</td>
+                                                        href="{{ route('backoffice.permission.show', $permission) }}">Ver
+                                                        {{$permission->name}}</td>
                                             </tr>
                                             @endforeach
                                         </tbody>

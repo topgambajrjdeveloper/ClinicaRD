@@ -34,7 +34,7 @@ class Permission extends Model
     public function my_update($request)
     {
         $slug = str_slug($request->name,'-');
-        self::updated($request->all() + [
+        self::update($request->all() + [
             'slug' => $slug,
         ]);
         alert()->success('Éxito', 'El permiso se ha actualizado')->persistent('Cerrar');
