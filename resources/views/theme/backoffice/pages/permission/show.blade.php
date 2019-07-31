@@ -1,14 +1,14 @@
 @extends('theme.backoffice.layouts.admin')
 
-@section('title', 'Ver Rol')
+@section('title', 'Ver permisos')
 
 @section('head')
 @endsection
 
 @section('breadcrumbs')
 {{-- <li> <a href=""></li> --}}
-<li> <a href="{{ route('backoffice.role.index') }}"> Roles del Sistema</li>
-<li> {{ $role->name }}</li>
+<li> <a href="{{ route('backoffice.permission.index') }}"> Permisos del Sistema</li>
+<li> {{ $permission->name }}</li>
 @endsection
 
 @section('content')
@@ -28,9 +28,11 @@
                                             <div class="card-stacked">
                                                 <div class="card-content">
                                                     <h4> Rol: {{ $permissions->name }}</h4>
-                                                    <p> Slug: {{ $permissions->role_id }}</p>
                                                     <p> Descripción: {{ $permissions->description }}</p>
                                                     <p> Slug: {{ $permissions->slug }}</p>
+                                                </div>
+                                                <div class="card-content">
+
                                                 </div>
                                             </div>
                                         </div>

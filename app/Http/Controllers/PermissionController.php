@@ -66,7 +66,7 @@ class PermissionController extends Controller
     {
         return view('theme.backoffice.pages.permission.edit',[
             'permission' => $permission,
-            'roles'       => Role::all(),
+            'roles'      => Role::all()
         ]);
     }
 

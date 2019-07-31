@@ -33,7 +33,7 @@ class Permission extends Model
 
     public function my_update($request)
     {
-        $slug = str_slug($request->name, '-');
+        $slug = str_slug($request->name,'-');
         self::updated($request->all() + [
             'slug' => $slug,
         ]);
