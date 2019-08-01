@@ -19,7 +19,7 @@
             <div class="col s12 m8">
                 <div class="card">
                     <div class="card-content">
-                        <span class="card-title">{{ $user->name }}</span>
+                        <span class="card-title"> {{ $user->name }}</span>
                     </div>
                     <div class="card-action">
                         <a href=""></a>

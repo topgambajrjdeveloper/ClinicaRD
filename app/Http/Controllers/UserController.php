@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Role;
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -91,9 +93,12 @@ class UserController extends Controller
      * Mostrar formulario para asignar rol.
      *
      */
-    public function assign_role()
+    public function assign_role(User $user)
     {
-
+        return view('theme.backoffice.pages.user.assign_role', [
+            'user' => $user,
+            'role' => Role::all(),
+        ]);
     }
 
     /**
